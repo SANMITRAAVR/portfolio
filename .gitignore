@@ -1,4 +1,5 @@
 node_modules
+backend/portfolio.db
 backend/node_modules
 .env
 portfolio.db
