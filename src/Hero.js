@@ -22,12 +22,13 @@ function Hero() {
           experience in hackathons, internships, and full-stack projects.
         </p>
 
-        {/* BUTTONS */}
+        {/* BUTTON */}
         <div className="hero-buttons">
 
-          
-
-          <a href="/resume.pdf" download>
+          <a
+            href="/resume.pdf"
+            download="Sanmitraa_Resume.pdf"
+          >
             <button className="resume-btn">
               Download Resume
             </button>
