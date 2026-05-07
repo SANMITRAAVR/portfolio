@@ -3,6 +3,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Hero from "./Hero";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       
       {/* 🔹 Navbar */}
       <Navbar />
-
+      <Hero />
       {/* 🔹 Sections */}
       <About />
       <Skills />

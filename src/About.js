@@ -1,44 +1,80 @@
-import profilePic from "./assets/profile pic.jpeg";
 import "./About.css";
+import { motion } from "framer-motion";
 
 function About() {
   return (
-    <div id="about" className="about-section">
-      
-      {/* LEFT CONTENT */}
-      <div className="about-text">
-        <h1>Hi, I'm Sanmitraa 👋</h1>
+    <motion.div
+      id="about"
+      className="about-section"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
 
-        <h2>Software Engineer | Full Stack Web Developer | AI Enthusiast | ML Engineer</h2>
+      {/* LEFT SIDE */}
+      <div className="about-left">
+
+        <h1>About Me</h1>
 
         <p>
-          I am a final-year Computer Science Engineering student passionate about 
-          building impactful digital solutions. I specialize in frontend development 
-          and have strong foundations in Java, C++, and Python.
+          I am a passionate Computer Science Engineering student with
+          strong interests in frontend development, Artificial Intelligence,
+          and full-stack web technologies.
         </p>
 
         <p>
-          I have hands-on experience through internships, hackathons, and real-world 
-          projects. I enjoy solving meaningful problems using technology, especially 
-          in areas like AI, web development, and social impact.
+          I enjoy building user-friendly applications and solving real-world
+          problems through innovative software solutions.
         </p>
 
         <p>
-          My goal is to become a skilled software engineer who builds scalable and 
-          user-friendly applications that create real value.
+          With experience in internships, hackathons, and project development,
+          I continuously explore new technologies and improve my skills.
         </p>
 
-        <a href="/resume.pdf" download>
-        <button className="resume-btn">Download Resume</button>
-        </a>
       </div>
 
-      {/* RIGHT IMAGE */}
-      <div className="about-image">
-        <img src={profilePic} alt="Profile" />
+      {/* RIGHT SIDE */}
+      <div className="about-right">
+
+        <div className="about-card">
+
+          <h2>🎓 Education</h2>
+
+          <p>
+            B.E Computer Science and Engineering
+            <br />
+            Sri Krishna College of Engineering and Technology
+          </p>
+
+        </div>
+
+        <div className="about-card">
+
+          <h2>💻 Experience</h2>
+
+          <p>
+            Frontend Developer Intern at Alfido Tech
+            <br />
+            Java Intern at TechnoHacks
+          </p>
+
+        </div>
+
+        <div className="about-card">
+
+          <h2>🏆 Achievements</h2>
+
+          <p>
+            Hackathon Finalist • LeetCode Problem Solver • AI Projects
+          </p>
+
+        </div>
+
       </div>
 
-    </div>
+    </motion.div>
   );
 }
 

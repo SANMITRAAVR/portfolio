@@ -1,58 +1,138 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import "./Projects.css";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/projects")
-      .then((res) => res.json())
-      .then((data) => setProjects(data))
-      .catch((err) => console.log(err));
-  }, []);
+  const projects = [
+
+    {
+      title: "Advanced To-Do List App with Calendar and Reminders",
+
+      description:
+        "A productivity application with calendar integration, reminders, and task management features for better scheduling and organization.",
+
+      tech: ["React", "MySQL", "REST API"],
+
+      github:
+        "https://github.com/SANMITRAAVR/Advanced-To-Do-App-with-calender-and-remainders"
+    },
+
+    {
+      title: "Colour Detection System",
+
+      description:
+        "A computer vision project that detects and identifies colors from images using image processing techniques.",
+
+      tech: ["Python", "OpenCV", "AI"],
+
+      github:
+        "https://github.com/SANMITRAAVR/Colour-detection"
+    },
+
+    {
+      title: "Face Detection",
+
+      description:
+        "AI-powered application capable of detecting human faces in real-time using computer vision algorithms.",
+
+      tech: ["Python", "OpenCV", "AI"],
+
+      github:
+        "https://github.com/SANMITRAAVR/Face-detection"
+    },
+
+    {
+      title: "Face Recognition System",
+
+      description:
+        "A facial recognition application that identifies and verifies individuals using AI and image recognition techniques.",
+
+      tech: ["Python", "AI", "OpenCV"],
+
+      github:
+        "https://github.com/SANMITRAAVR/Face-recognition"
+    },
+
+    {
+      title: "Personalized Home Improvement App",
+
+      description:
+        "A smart home improvement platform providing personalized recommendations and user-focused solutions.",
+
+      tech: ["REST API"],
+
+      github:
+        "https://github.com/SANMITRAAVR/REST-API"
+    },
+
+    {
+      title: "E-Hospital Management System",
+
+      description:
+        "A healthcare management platform for handling patient records, appointments, and hospital administration efficiently.",
+
+      tech: ["ML", "React", "Firebase"],
+
+      github:
+        "https://github.com/priya242005/e-hospital"
+    }
+
+  ];
 
   return (
-    <div id="projects" className="section container">
-      <h2>My Projects</h2>
+
+    <div id="projects" className="projects-section">
+
+      <h1>Projects</h1>
+
+      <p>
+        Some of the projects I built during internships,
+        hackathons and personal learning.
+      </p>
 
       <div className="projects-grid">
-        {projects.map((p) => (
-          <motion.div
-            className="project-card"
-            key={p.id}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            <h3>{p.title}</h3>
-            <p>{p.description}</p>
-            <p><b>Tech:</b> {p.techStack}</p>
 
-            <div style={{ marginTop: "10px" }}>
-              <a
-                href={p.githubLink}
-                target="_blank"
-                rel="noreferrer"
-                style={{ marginRight: "10px", color: "#38bdf8" }}
-              >
-                GitHub
-              </a>
+        {projects.map((project, index) => (
 
-              {p.liveLink && (
+          <div className="project-card" key={index}>
+
+            <div className="project-content">
+
+              <h2>{project.title}</h2>
+
+              <p>{project.description}</p>
+
+              {/* TECH TAGS */}
+              <div className="tech-tags">
+
+                {project.tech.map((tech, i) => (
+                  <span key={i}>{tech}</span>
+                ))}
+
+              </div>
+
+              {/* BUTTON */}
+              <div className="project-buttons">
+
                 <a
-                  href={p.liveLink}
+                  href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#22c55e" }}
                 >
-                  Live
+                  GitHub
                 </a>
-              )}
+
+              </div>
+
             </div>
-          </motion.div>
+
+          </div>
+
         ))}
+
       </div>
+
     </div>
+
   );
 }
 

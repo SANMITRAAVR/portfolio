@@ -1,66 +1,88 @@
 .about-section {
   min-height: 100vh;
+  background: #020617;
+  color: white;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 80px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
+  gap: 50px;
 }
 
-/* LEFT TEXT */
-.about-text {
+/* LEFT */
+.about-left {
   flex: 1;
-  padding-right: 40px;
 }
 
-.about-text h1 {
+.about-left h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  color: #38bdf8;
 }
 
-.about-text h2 {
-  font-size: 1.8rem;
-  color: #38bdf8;
+.about-left p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #cbd5e1;
   margin-bottom: 20px;
 }
 
-.about-text p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin-bottom: 15px;
-  color: #cbd5f5;
-}
-
-/* BUTTON */
-.resume-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #38bdf8;
-  border: none;
-  border-radius: 8px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.resume-btn:hover {
-  background: #0ea5e9;
-}
-
-/* RIGHT IMAGE */
-.about-image {
+/* RIGHT */
+.about-right {
   flex: 1;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.about-image img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #38bdf8;
-  box-shadow: 0px 0px 40px rgba(56, 189, 248, 0.5);
+/* CARDS */
+.about-card {
+  background: rgba(30, 41, 59, 0.7);
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+
+  padding: 25px;
+  border-radius: 16px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #38bdf8;
+
+  box-shadow: 0px 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+.about-card h2 {
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+.about-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .about-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
 }
